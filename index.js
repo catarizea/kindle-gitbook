@@ -24,6 +24,19 @@ let headerOverAgain = false;
 $('div').each(function(i, el) {
   const self = $(this);
   const className = self.attr('class');
+
+  if (className === 'bookTitle') {
+    source[`"title"`] = self.text().trim();
+  }
+
+  if (className === 'authors') {
+    source[`"authors"`] = self.text().trim();
+  }
+
+  if (className === 'citation') {
+    source[`"citation"`] = self.text().trim();
+  }
+
   if (className === 'sectionHeading') {
     const text = replaceQuotes(self.text().trim());
 
