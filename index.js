@@ -108,12 +108,12 @@ $('div').each(function(i, el) {
           if (headerObj) {
             const head = `"${getHeader(headerObj.toString())}"`;
             if (head) {
-              if (!source[section]['"intro"']) {
-                source[section]['"intro"'] = {};
+              if (!source[section]['"Intro"']) {
+                source[section]['"Intro"'] = {};
               }
               if (header !== head) {
                 header = head;
-                source[section]['"intro"'][header] = [];
+                source[section]['"Intro"'][header] = [];
               }
             }
           }
@@ -127,7 +127,7 @@ $('div').each(function(i, el) {
     let parent = get(source, [section, chapter, header], null);
 
     if (!parent) {
-      parent = get(source, [section, '"intro"', header], null);
+      parent = get(source, [section, '"Intro"', header], null);
     }
     
     if (!parent) {

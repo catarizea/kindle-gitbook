@@ -18,16 +18,19 @@
     "url": "https://github.com/catarizea/kindle-gitbook/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "node generate.js",
+    "parse": "node index.js",
+    "start": "npm-run-all parse generate"
   },
   "author": "Catalin Rizea",
   "license": "MIT",
   "dependencies": {
+    "@sindresorhus/slugify": "^0.6.0",
     "cheerio": "^1.0.0-rc.2",
+    "filenamify": "^2.1.0",
     "fs-jetpack": "^2.2.0",
-    "lodash": "^4.17.11",
     "lodash.get": "^4.4.2",
     "lodash.replace": "^4.1.4",
-    "uninstall": "0.0.0"
+    "npm-run-all": "^4.1.5"
   }
 }
