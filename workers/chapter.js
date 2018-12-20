@@ -6,13 +6,13 @@ const generatePage = (section, chapter, headings) => {
 `;
 
   for (let heading in headings) {
-    page += `### ${heading};
+    page += `### ${heading}
 
 `;  
     if (headings[heading].length) {
       headings[heading].forEach(head => {
         if (head.indexOf('*||*') === -1) {
-          if (/^Figure [0-9]+- [0-9]+\. /.test(head)) {
+          if (/^Figure [0-9]+- [0-9]+\. /.test(head) || /^Figure [MDCLXVI]+- [0-9]\./.test(head)) {
             const parts = head.split('.');
             page += `![](/assets/${parts[0]}.png)
 
@@ -72,12 +72,12 @@ const generatePreface = tree => {
 
   let page = `# Preface
   
-  `;
+`;
 
   for (let heading in tree.preface) {
     page += `### ${heading}
   
-    `;
+`;
     
     if (tree.preface[heading].length) {
       tree.preface[heading].forEach(item => {
